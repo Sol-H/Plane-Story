@@ -8,63 +8,33 @@
     android:scaleType="centerCrop"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/playing"
-        android:contentDescription="@string/app_name"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
-        android:id="@+id/description"
-        android:layout_width="292dp"
-        android:layout_height="180dp"
-        android:text="@string/text_and_question"
+        android:id="@+id/welcome"
+        android:layout_width="302dp"
+        android:layout_height="78dp"
+        android:text="@string/welcome"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="299dp"
-        android:layout_height="98dp"
-        android:maxLines="4"
-        android:text="@string/text_and_question"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/black"
-        android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/start_button"
         style="?attr/buttonStyle"
         android:layout_width="328dp"
         android:layout_height="93dp"
         android:foregroundTint="#FDFDFD"
         android:foregroundTintMode="src_over"
         android:hapticFeedbackEnabled="true"
-        android:onClick="optionOneActor"
-        android:text="@string/option_one"
+        android:onClick="startGameActor"
+        android:text="@string/start_game"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -87,37 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.548"
-        tools:ignore="UsingOnClickInXml" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
-        android:hapticFeedbackEnabled="true"
-        android:onClick="optionTwoActor"
-        android:text="@string/option_two"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749"
-        tools:ignore="UsingOnClickInXml" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="294dp"
-        android:hapticFeedbackEnabled="true"
-        android:onClick="optionThreeActor"
-        android:text="@string/option_three"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
         tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
