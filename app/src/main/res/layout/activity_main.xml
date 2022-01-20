@@ -4,59 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/ic_launcher_foreground"
+    android:background="@color/teal_200"
     android:scaleType="centerCrop"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="302dp"
-        android:layout_height="78dp"
-        android:text="@string/welcome"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/alive"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/start_button"
-        style="?attr/buttonStyle"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
-        android:foregroundTint="#FDFDFD"
-        android:foregroundTintMode="src_over"
-        android:hapticFeedbackEnabled="true"
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/title"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="364dp"
+        android:layout_height="102dp"
+        android:clickable="true"
+        android:fontFamily="@font/miriam_libre"
+        android:linksClickable="true"
+        android:longClickable="false"
+        android:maxLines="4"
         android:onClick="startGameActor"
         android:text="@string/start_game"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#9C0000"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576"
-        tools:ignore="UsingOnClickInXml" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
-        android:hapticFeedbackEnabled="true"
-        android:onClick="resetActor"
-        android:text="@string/reset"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintVertical_bias="0.672" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,51 +1,36 @@
 package sol.planecrashstory;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.*;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.InputStream;
 
-import sol.planecrashstory.databinding.ActivityGameBinding;
-
 public class GameActivity extends AppCompatActivity {
 
     NodeMap map;
 
-    private ActivityGameBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityGameBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_game);
 
         InputStream prc = getCSVRes();
         map = new NodeMap(prc);
         Button reset = (Button) findViewById(R.id.reset);
         reset.setVisibility(View.GONE);
+
         setTexts();
     }
 
@@ -75,6 +60,7 @@ public class GameActivity extends AppCompatActivity {
                 button1.setText(getResources().getString(R.string.option_continue));
                 button2.setVisibility(View.GONE);
                 button3.setVisibility(View.GONE);
+                slideAnimation(button1);
             } else {
                 button1.setText(getResources().getString(R.string.option_one));
                 button2.setVisibility(View.VISIBLE);
@@ -83,14 +69,18 @@ public class GameActivity extends AppCompatActivity {
                 button2.setText(map.currentNode().getNodeTwo().getDescription());
 
                 if (map.twoChoices()) {
+                    // Two Options
                     button3.setVisibility(View.GONE);
+                    slideAnimation(button1, button2);
                 } else {
+                    // Three Options
                     button3.setVisibility(View.VISIBLE);
                     button3.setText(map.currentNode().getNodeThree().getDescription());
+                    slideAnimation(button1, button2, button3);
                 }
+
             }
         }
-
 
     }
 
@@ -116,21 +106,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void resetActor(View view){
-        InputStream prc = getCSVRes();
-        map = new NodeMap(prc);
 
-        TextView tvDesc = (TextView) findViewById(R.id.description);
-        TextView tvQues = (TextView) findViewById(R.id.question);
+        Intent game = new Intent(GameActivity.this,MainActivity.class);
+        startActivity(game);
 
-        tvDesc.setTextColor(Color.BLACK);
-        tvQues.setTextColor(Color.BLACK);
-
-        ImageView bg = (ImageView) findViewById(R.id.background);
-        bg.setBackgroundResource(R.drawable.playing);
-
-        setTexts();
-        Button reset = (Button) findViewById(R.id.reset);
-        reset.setVisibility(View.GONE);
     }
 
     public void endOfGame(){
@@ -157,6 +136,29 @@ public class GameActivity extends AppCompatActivity {
         button3.setVisibility(View.GONE);
         Button reset = (Button) findViewById(R.id.reset);
         reset.setVisibility(View.VISIBLE);
+        slideAnimation(reset);
+    }
+
+    public void slideAnimation(Button buttonOne, Button buttonTwo, Button buttonThree){
+        Animation animSlide = AnimationUtils.loadAnimation(this,
+                R.anim.slide);
+        buttonOne.startAnimation(animSlide);
+        buttonTwo.startAnimation(animSlide);
+        buttonThree.startAnimation(animSlide);
+    }
+
+    public void slideAnimation(Button buttonOne, Button buttonTwo){
+        Animation animSlide = AnimationUtils.loadAnimation(this,
+                R.anim.slide);
+        buttonOne.startAnimation(animSlide);
+        buttonTwo.startAnimation(animSlide);
+    }
+
+    public void slideAnimation(Button button){
+        Animation animSlide = AnimationUtils.loadAnimation(this,
+                R.anim.slide);
+
+        button.startAnimation(animSlide);
     }
 
 }

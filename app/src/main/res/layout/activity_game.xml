@@ -24,18 +24,19 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="292dp"
-        android:layout_height="180dp"
+        android:layout_width="248dp"
+        android:layout_height="171dp"
         android:text="@string/text_and_question"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.129" />
 
     <TextView
         android:id="@+id/question"
@@ -53,19 +54,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <Button
         android:id="@+id/button1"
-        style="?attr/buttonStyle"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:foregroundTint="#FDFDFD"
         android:foregroundTintMode="src_over"
         android:hapticFeedbackEnabled="true"
         android:onClick="optionOneActor"
+        android:shadowColor="@color/teal_700"
         android:text="@string/option_one"
         android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -76,12 +78,14 @@
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:hapticFeedbackEnabled="true"
         android:onClick="resetActor"
         android:text="@string/reset"
+        android:textAllCaps="false"
         android:visibility="gone"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -92,12 +96,14 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:hapticFeedbackEnabled="true"
         android:onClick="optionTwoActor"
+        android:shadowColor="@color/teal_700"
         android:text="@string/option_two"
         android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -108,13 +114,15 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="328dp"
-        android:layout_height="93dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_marginTop="294dp"
         android:hapticFeedbackEnabled="true"
         android:onClick="optionThreeActor"
+        android:shadowColor="@color/teal_700"
         android:text="@string/option_three"
         android:textAllCaps="false"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
