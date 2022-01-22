@@ -21,14 +21,30 @@ public class GameActivity extends AppCompatActivity {
 
     NodeMap map;
 
+    TextView tvDesc;
+    TextView tvQues;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button reset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        // Defining Buttons and TextViews
+        tvDesc = (TextView) findViewById(R.id.description);
+        tvQues = (TextView) findViewById(R.id.question);
+
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        reset = (Button) findViewById(R.id.reset);
+
         InputStream prc = getCSVRes();
         map = new NodeMap(prc);
-        Button reset = (Button) findViewById(R.id.reset);
+
         reset.setVisibility(View.GONE);
 
         setTexts();
@@ -40,13 +56,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     protected void setTexts(){
-
-        TextView tvDesc = (TextView) findViewById(R.id.description);
-        TextView tvQues = (TextView) findViewById(R.id.question);
-
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
 
         tvDesc.setText(map.currentNode().getDescription());
         tvQues.setText(map.currentNode().getQuestion());
@@ -106,6 +115,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void resetActor(View view){
+        //button for restarting game
 
         Intent game = new Intent(GameActivity.this,MainActivity.class);
         startActivity(game);
@@ -113,12 +123,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void endOfGame(){
-        TextView tvDesc = (TextView) findViewById(R.id.description);
-        TextView tvQues = (TextView) findViewById(R.id.question);
-
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
 
         ImageView bg = (ImageView) findViewById(R.id.background);
 

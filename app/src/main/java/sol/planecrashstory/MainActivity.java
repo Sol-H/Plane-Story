@@ -26,12 +26,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         player= MediaPlayer.create(MainActivity.this,R.raw.maintheme);
         player.start();
+        player.setVolume(75,75);
         animateTitle();
         if (isFinishing()){
             player.stop();
         }
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
+
+
 
    public void startGameActor(View view){
        Intent game = new Intent(MainActivity.this,GameActivity.class);
