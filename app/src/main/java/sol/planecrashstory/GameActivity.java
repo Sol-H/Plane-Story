@@ -25,12 +25,16 @@ public class GameActivity extends AppCompatActivity {
     // Text, Buttons, images and sounds.
     TextView tvDesc;
     TextView tvQues;
+
     Button button1;
     Button button2;
     Button button3;
     Button reset;
+
     ImageView bg;
-    MediaPlayer player;
+    ImageView textPanel;
+    ImageView buttonPanel;
+
     Animation buttonAnim;
     Animation textAnim;
 
@@ -47,6 +51,8 @@ public class GameActivity extends AppCompatActivity {
         button3 = (Button) findViewById(R.id.button3);
         reset = (Button) findViewById(R.id.reset);
         bg = (ImageView) findViewById(R.id.background);
+        textPanel = (ImageView) findViewById(R.id.textpanel);
+        buttonPanel = (ImageView) findViewById(R.id.buttonpanel);
 
         buttonAnim = AnimationUtils.loadAnimation(this, R.anim.slide);
         textAnim = AnimationUtils.loadAnimation(this, R.anim.slide2);
@@ -134,6 +140,15 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void endOfGame(){
+        // makes all buttons gone apart from the reset button, so the user can start the game again
+
+        textPanel.setVisibility(View.INVISIBLE);
+        buttonPanel.setVisibility(View.INVISIBLE);
+
+        button1.setVisibility(View.GONE);
+        button2.setVisibility(View.GONE);
+        button3.setVisibility(View.GONE);
+        reset.setVisibility(View.VISIBLE);
 
         if(map.currentNode().getOption1ID() == -2){
             bg.setBackgroundResource(R.drawable.death);
@@ -145,31 +160,32 @@ public class GameActivity extends AppCompatActivity {
             bg.setBackgroundResource(R.drawable.alive);
         }
 
-        button1.setVisibility(View.GONE);
-        button2.setVisibility(View.GONE);
-        button3.setVisibility(View.GONE);
-        reset.setVisibility(View.VISIBLE);
-
         slideAnimation(reset);
     }
+
+    // Slide animation for buttons and text.
 
     public void slideAnimation(Button buttonOne, Button buttonTwo, Button buttonThree){
         buttonOne.startAnimation(buttonAnim);
         buttonTwo.startAnimation(buttonAnim);
         buttonThree.startAnimation(buttonAnim);
+        buttonPanel.startAnimation(buttonAnim);
     }
 
     public void slideAnimation(Button buttonOne, Button buttonTwo){
         buttonOne.startAnimation(buttonAnim);
         buttonTwo.startAnimation(buttonAnim);
+        buttonPanel.startAnimation(buttonAnim);
     }
 
     public void slideAnimation(Button button){
         button.startAnimation(buttonAnim);
+        buttonPanel.startAnimation(buttonAnim);
     }
 
     public void slideAnimation(TextView text){
         text.startAnimation(textAnim);
+        textPanel.startAnimation(textAnim);
     }
 
 }
