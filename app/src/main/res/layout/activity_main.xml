@@ -65,14 +65,15 @@
         android:text="@string/start_game"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#9C0000"
+        android:textColor="#E91E63"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.672"
+        android:focusable="true" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,13 +31,15 @@ public class GameActivity extends AppCompatActivity {
     Button reset;
     ImageView bg;
     MediaPlayer player;
+    Animation buttonAnim;
+    Animation textAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Defining Buttons, TextViews and ImageViews
+        // Defining Buttons, TextViews, ImageViews and animations
         tvDesc = (TextView) findViewById(R.id.description);
         tvQues = (TextView) findViewById(R.id.question);
         button1 = (Button) findViewById(R.id.button1);
@@ -46,11 +48,14 @@ public class GameActivity extends AppCompatActivity {
         reset = (Button) findViewById(R.id.reset);
         bg = (ImageView) findViewById(R.id.background);
 
+        buttonAnim = AnimationUtils.loadAnimation(this, R.anim.slide);
+        textAnim = AnimationUtils.loadAnimation(this, R.anim.slide2);
+
+        // Setting Input Stream for CSV File
         InputStream prc = getCSVRes();
         map = new NodeMap(prc);
 
         reset.setVisibility(View.GONE);
-
         setTexts();
     }
 
@@ -63,6 +68,8 @@ public class GameActivity extends AppCompatActivity {
 
         tvDesc.setText(map.currentNode().getDescription());
         tvQues.setText(map.currentNode().getQuestion());
+        slideAnimation(tvDesc);
+        slideAnimation(tvQues);
 
         if (map.endOfGame()){
             endOfGame();
@@ -128,12 +135,11 @@ public class GameActivity extends AppCompatActivity {
 
     public void endOfGame(){
 
-        bg = (ImageView) findViewById(R.id.background);
-
         if(map.currentNode().getOption1ID() == -2){
             bg.setBackgroundResource(R.drawable.death);
             tvDesc.setTextColor(Color.WHITE);
             tvQues.setTextColor(Color.WHITE);
+            reset.setTextColor(Color.WHITE);
         }
         else{
             bg.setBackgroundResource(R.drawable.alive);
@@ -142,31 +148,28 @@ public class GameActivity extends AppCompatActivity {
         button1.setVisibility(View.GONE);
         button2.setVisibility(View.GONE);
         button3.setVisibility(View.GONE);
-        Button reset = (Button) findViewById(R.id.reset);
         reset.setVisibility(View.VISIBLE);
+
         slideAnimation(reset);
     }
 
     public void slideAnimation(Button buttonOne, Button buttonTwo, Button buttonThree){
-        Animation animSlide = AnimationUtils.loadAnimation(this,
-                R.anim.slide);
-        buttonOne.startAnimation(animSlide);
-        buttonTwo.startAnimation(animSlide);
-        buttonThree.startAnimation(animSlide);
+        buttonOne.startAnimation(buttonAnim);
+        buttonTwo.startAnimation(buttonAnim);
+        buttonThree.startAnimation(buttonAnim);
     }
 
     public void slideAnimation(Button buttonOne, Button buttonTwo){
-        Animation animSlide = AnimationUtils.loadAnimation(this,
-                R.anim.slide);
-        buttonOne.startAnimation(animSlide);
-        buttonTwo.startAnimation(animSlide);
+        buttonOne.startAnimation(buttonAnim);
+        buttonTwo.startAnimation(buttonAnim);
     }
 
     public void slideAnimation(Button button){
-        Animation animSlide = AnimationUtils.loadAnimation(this,
-                R.anim.slide);
+        button.startAnimation(buttonAnim);
+    }
 
-        button.startAnimation(animSlide);
+    public void slideAnimation(TextView text){
+        text.startAnimation(textAnim);
     }
 
 }
