@@ -3,6 +3,7 @@ package sol.planecrashstory;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,26 +22,29 @@ public class GameActivity extends AppCompatActivity {
 
     NodeMap map;
 
+    // Text, Buttons, images and sounds.
     TextView tvDesc;
     TextView tvQues;
     Button button1;
     Button button2;
     Button button3;
     Button reset;
+    ImageView bg;
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Defining Buttons and TextViews
+        // Defining Buttons, TextViews and ImageViews
         tvDesc = (TextView) findViewById(R.id.description);
         tvQues = (TextView) findViewById(R.id.question);
-
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         reset = (Button) findViewById(R.id.reset);
+        bg = (ImageView) findViewById(R.id.background);
 
         InputStream prc = getCSVRes();
         map = new NodeMap(prc);
@@ -124,7 +128,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void endOfGame(){
 
-        ImageView bg = (ImageView) findViewById(R.id.background);
+        bg = (ImageView) findViewById(R.id.background);
 
         if(map.currentNode().getOption1ID() == -2){
             bg.setBackgroundResource(R.drawable.death);

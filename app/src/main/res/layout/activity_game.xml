@@ -6,7 +6,8 @@
     android:layout_height="fill_parent"
     android:background="@drawable/ic_launcher_foreground"
     android:scaleType="centerCrop"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".GameActivity">
 
     <ImageView
         android:id="@+id/background"

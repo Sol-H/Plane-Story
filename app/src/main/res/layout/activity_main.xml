@@ -6,6 +6,7 @@
     android:layout_height="fill_parent"
     android:background="@color/teal_200"
     android:scaleType="centerCrop"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
@@ -37,6 +38,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/plane"
+        android:layout_width="165dp"
+        android:layout_height="446dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/plane" />
+
     <TextView
         android:id="@+id/start"
         android:layout_width="364dp"
@@ -58,5 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.672" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

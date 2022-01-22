@@ -7,13 +7,13 @@
         android:label="@string/app_label"
         android:roundIcon="@mipmap/logo1_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PlaneCrashStory">
+        android:theme="@style/Theme.PlaneCrashStory"
+        android:fullBackupContent="true">
         <activity
             android:name=".GameActivity"
             android:exported="false"
             android:label="@string/title_activity_game"
             android:theme="@style/Theme.PlaneCrashStory.NoActionBar"
-            android:screenOrientation="portrait"
             />
         <activity
             android:name=".MainActivity"
