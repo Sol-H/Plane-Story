@@ -79,6 +79,12 @@ public class GameActivity extends AppCompatActivity {
 
     protected void setTexts(){
 
+        // Adding commas into the app, as they cannot be used in a csv
+        String description = map.currentNode().getDescription();
+        if (description.contains(" - ")){
+            description = description.replace(" - ",", ");
+        }
+
         // Separate the choices in the question textView
         String question = map.currentNode().getQuestion();
         if (question.contains("1:")){
@@ -92,7 +98,7 @@ public class GameActivity extends AppCompatActivity {
         }
 
         // Set the text for the description and the question
-        tvDesc.setText(map.currentNode().getDescription());
+        tvDesc.setText(description);
         tvQues.setText(question);
         slideAnimation(tvDesc);
         slideAnimation(tvQues);
