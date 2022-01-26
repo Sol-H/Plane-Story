@@ -1,26 +1,26 @@
-1,2,3,4,You wake up during the plane ride feeling like you are in a free-fall. Oxygen masks drop from above you and you look around to see everyone panicking.,Choices  1: Brace for impact  2: Put on the oxygen mask.  3: Scream and ask for help.
+1,2,3,4,You wake up during the plane ride feeling like you are in a free-fall. Oxygen masks drop from above you and you look around to see everyone panicking.,Choices:  1: Brace for impact  2: Put on the oxygen mask.  3: Scream and ask for help.
 2,5,-1,-1,You brace yourself for impact,-
 5,6,-1,-1,Things slowly go black and you lose consciousness (You ran out of oxygen),-
 6,-2,-1,-1,When the plane crashes you die from the impact. The end.,-
-3,7,8,-1,You put on the oxygen mask.,Choices 1: Brace for impact 2: Look around and see if anyone needs help
+3,7,8,-1,You put on the oxygen mask.,Choices: 1: Brace for impact 2: Look around and see if anyone needs help
 7,10,-1,-1,You brace for impact,-
 10,13,-1,-1,Ignoring everyone else around you - you brace for impact as fast as you can,-
-13,15,16,17,The plane slams into the ground with a big crash. Whilst you are mostly uninjured - you notice the person next to you was not so lucky... he did not make it.,Choices 1: Where am I? 2: PANIC! 3: I wonder if the person next to me has anything in his pockets?
+13,15,16,17,The plane slams into the ground with a big crash. Whilst you are mostly uninjured - you notice the person next to you was not so lucky... he did not make it.,Choices: 1: Where am I? 2: PANIC! 3: I wonder if the person next to me has anything in his pockets?
 15,19,-1,-1,You wonder.. Where on earth am I??,-
-19,25,26,-1,You lean over the dead body next to you and look out the aeroplane window. All you can see is smoke and... fire.. FIRE?,Choices 1: Look around you to find people who can help. 2: RUN!
+19,25,26,-1,You lean over the man next to you and look out the aeroplane window. All you can see is smoke and... fire.. FIRE?,Choices: 1: Look around you to find people who can help. 2: RUN!
 25,31,-1,-1,You look around to see if you can find people who will be able to help you,-
-31,37,38,39,Besides the man next to you who is dead- you look around and see some other passengers in the same state as you- panicking. There is an old lady- a little boy and a muscular man.,Choices 1: Talk to the muscular man. 2 :Talk to the old lady. 3: Talk to the little boy
+31,37,38,39,Besides the man next to you who is dead- you look around and see some other passengers in the same state as you- panicking. There is an old lady- a little boy and a muscular man.,Choices: 1: Talk to the muscular man. 2 :Talk to the old lady. 3: Talk to the little boy
 37,48,-1,-1,You tap the muscular man on the shoulder,-
 48,54,-1,-1,The man turns around saying 'Hello it's me Joe. I am strong',-
 54,-1,-1,-1,Joe picks you up and runs away with you in his arms. You live happily ever after with 4 children. The End.,-
 38,49,-1,-1,You decide to speak to the old lady,-
 49,55,-1,-1,You tap the very old lady on her shoulder- and after what seems like an eternity she finally finishes turning around. It looks like she needs help.,-
 55,75,-1,-1,You offer your help to the lady but she declines- saying 'I'm too old for this'. Then dies of old age.,-
-75,76,77,-1,Wiping your tears- you realise you should do something,Choices 1: Try and escape the plane. 2: Keep crying,-
-76,40,41,42,You decide to try and escape the plane,Choices 1: Find the nearest emergency exit. 2: Run to the cockpit. 3: Make a dash to the bathroom
+75,76,77,-1,Wiping your tears- you realise you should do something,Choices: 1: Try and escape the plane. 2: Keep crying,-
+76,40,41,42,You decide to try and escape the plane,Choices: 1: Find the nearest emergency exit. 2: Run to the cockpit. 3: Make a dash to the bathroom
 40,51,-1,-1,You choose to look for the nearest exit,-
 51,57,-1,-1,Luckily the nearest emergency exit isn't far at all! You burst out of the exit and you are outside the plane.,-
-57,74,72,-1,Freedom at last! You look around and see that you are on a deserted island.,Choices 1: Try and dial 999 to get rescued.  2: Explore the island
+57,74,72,-1,Freedom at last! You look around and see that you are on a deserted island.,Choices: 1: Try and dial 999 to get rescued.  2: Explore the island
 74,73,-1,-1,You try to dial 999 to get rescued,-
 73,-1,-1,-1,Wait... your phone was working this whole time?... a helicopter arrives shortly to rescue you and the other passengers. The end.,-
 72,71,-1,-1,You decide to explore the island,-
@@ -37,39 +37,39 @@
 53,59,-1,-1,You turn around and run towards the back of the plane where the bathroom is. On the way you trip and fall into a hole.,-
 59,-2,-1,-1,You land on a spike and as you slowly lose blood- a fire engulfs you and you burn alive. The end.,-
 26,32,-1,-1,YOU DECIDE TO RUN!!!,-
-32,40,41,42,Ok... run... but where to?,Choices 1: Find the nearest emergency exit 2: Run to the cockpit. 3: Make a dash to the bathroom
+32,40,41,42,Ok... run... but where to?,Choices: 1: Find the nearest emergency exit 2: Run to the cockpit. 3: Make a dash to the bathroom
 16,20,-1,-1,YOU PANIC!!!,-
 20,21,-1,-1,You scream just like everyone else around you... Nothing happens.,-
-21,24,27,-1,Pull yourself together! Or are you just going to accept your fate?,Choices 1: Ok... breathe... think...  2: I can't deal with this- I'll just sit and wait and hopefully I'll be ok.
-24,25,26,-1,You take a moment to breathe- and think,Choices 1: Look around you to find people who can help.  2: RUN!
+21,24,27,-1,Pull yourself together! Or are you just going to accept your fate?,Choices: 1: Ok... breathe... think...  2: I can't deal with this- I'll just sit and wait and hopefully I'll be ok.
+24,25,26,-1,You take a moment to breathe- and think,Choices: 1: Look around you to find people who can help.  2: RUN!
 27,33,-1,-1,You decide to sit there and do nothing,-
 33,34,-1,-1,After a while you start to realise things are not going to be ok.. but it's too late. You look around and there is fire all around you.,-
 34,-2,-1,-1,You are engulfed in flames and die. The end.,-
 17,22,-1,-1,You wonder if the person next to me has anything in his pockets?,-
 22,28,-1,-1,You rummage through the dead mans pockets looking for anything useful (talk about disrespectful),-
-28,25,26,-1,You find a screwdriver- his phone and identification....Dr. James Percival. Nothing useful.,Choices 1: Look around you to find people who can help.  2: RUN!
+28,25,26,-1,You find a screwdriver- his phone and identification....Dr. James Percival. Nothing useful.,Choices: 1: Look around you to find people who can help.  2: RUN!
 4,9,-1,-1,You decide to scream and ask for help.,-
 9,11,-1,-1,The person next to you puts the oxygen mask dangling above you on your face. You thank them.,-
 8,11,-1,-1,You look around you to see if anyone needs help.,-
 11,12,-1,-1,The person next to you passes out... they were not wearing an oxygen mask- and you put one on them. They are still unconscious.,-
 12,14,-1,-1,You brace for impact,-
-14,15,16,18,The plane slams into the ground with a big crash. You are mostly uninjured- and you notice that the person next to you may have a broken bone or two but looks to be alive.,Choices 1: Where am I? 2: PANIC! 3: Talk to the person next to you.
+14,15,16,18,The plane slams into the ground with a big crash. You are mostly uninjured- and you notice that the person next to you may have a broken bone or two but looks to be alive.,Choices: 1: Where am I? 2: PANIC! 3: Talk to the person next to you.
 18,23,-1,-1,You decide to talk to the person next to you.,-
-23,29,30,-1,The man introduces himself as Dr. James Percival. "I'm a doctor" he says- "but not an ordinary doctor. A TIME DOCTOR!",Choices 1: This man is clearly mentally unstable... 2: "Hmm, tell me more about it!"
+23,29,30,-1,The man introduces himself as Dr. James Percival. "I'm a doctor" he says- "but not an ordinary doctor. A TIME DOCTOR!",Choices: 1: This man is clearly mentally unstable... 2: "Hmm, tell me more about it!"
 29,35,-1,-1,You conclude this man is clearly mentally unstable...,-
-35,43,44,-1,You ponder for a moment to think what to do.,Choices 1: Ignore him and try and find a way out of the plane- before something bad might happen.. 2: Go along with what he is saying anyway.
-43,40,41,42,You decide to ignore him in fear that something bad may happen otherwise,Choices 1: Find the nearest emergency exit 2: Run to the cockpit. 3: Make a dash to the bathroom
+35,43,44,-1,You ponder for a moment to think what to do.,Choices: 1: Ignore him before something bad might happen.. 2: Go along with what he is saying anyway.
+43,40,41,42,You decide to ignore him in fear that something bad may happen otherwise,Choices: 1: Find the nearest emergency exit 2: Run to the cockpit. 3: Make a dash to the bathroom
 44,36,-1,-1,You decide to along with what he is saying anyway.,-
 30,36,-1,-1,You say "Hmm- tell me more about it!",-
 36,45,-1,-1,"Well..." He continues "I can time travel- and fix all this mess!". You stare at him blankly.,-
-45,46,47,-1,"All I need is your help and for you to trust me. What do you say- partner?",Choices 1: There's no way I'm trusting a stranger! 2: "Sure thing!"
+45,46,47,-1,"All I need is your help and for you to trust me. What do you say- partner?",Choices: 1: There's no way I'm trusting a stranger! 2: "Sure thing!"
 46,43,-1,-1,You decide there is no way you are trusting this strange individual,-
 47,60,-1,-1,You say "Sure thing!",-
-60,62,64,-1,He takes your hand- and you warp back in time to before the plane takes off! What do you do before the flight happens?,Choices 1: Just don't board the flight.. 2: Try and get the flight cancelled so that everyone lives.
+60,62,64,-1,He takes your hand- and you warp back in time to before the plane takes off! What do you do before the flight happens?,Choices: 1: Just don't board the flight.. 2: Try and get the flight cancelled so that everyone lives.
 62,61,-1,-1,You decide not to board the flight in the first place,-
 61,-1,-1,-1,Ahh I'm safe.. who cares about all those people who perished- it's not like I would be able to save them anyway (at least thats what you tell yourself)! The end.,-
-64,63,-1,-1,You decide that you should try and get the flight cancelled so that everyone lives.,-
-63,67,65,-1,And how will you do that?,Choices 1: Ask the time travel doctor guy 2: Yell at the staff telling them to cancel the flight because something bad is going to happen.
+64,63,-1,-1,You decide that you should cancel the flight so that everyone lives.,-
+63,67,65,-1,And how will you do that?,Choices: 1: Ask the time travel doctor 2: Yell at the staff - saying something bad is going to happen.
 67,68,-1,-1,You decide to ask the time travelling doctor what to do,-
 68,69,-1,-1,Dr. Percival tells you that the plane crash was caused by an old witch because of her crippling loneliness.,-
 69,70,-1,-1,You visit the old witch and bring cookies- and hot chocolate. She opens up to you and you all have a little cry and she says she wont play with planes anymore,-

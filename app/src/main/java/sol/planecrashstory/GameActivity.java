@@ -2,7 +2,6 @@ package sol.planecrashstory;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -29,7 +28,7 @@ public class GameActivity extends AppCompatActivity {
     Button button1;
     Button button2;
     Button button3;
-    Button reset;
+    Button end_button;
 
     ImageView bg;
     ImageView textPanel;
@@ -37,6 +36,8 @@ public class GameActivity extends AppCompatActivity {
 
     Animation buttonAnim;
     Animation textAnim;
+
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class GameActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
-        reset = (Button) findViewById(R.id.reset);
+        end_button = (Button) findViewById(R.id.end);
         bg = (ImageView) findViewById(R.id.background);
         textPanel = (ImageView) findViewById(R.id.textpanel);
         buttonPanel = (ImageView) findViewById(R.id.buttonpanel);
@@ -61,7 +62,13 @@ public class GameActivity extends AppCompatActivity {
         InputStream prc = getCSVRes();
         map = new NodeMap(prc);
 
-        reset.setVisibility(View.GONE);
+        // Start playing game music
+        player = MediaPlayer.create(GameActivity.this,R.raw.thinking);
+        player.start();
+        player.setVolume(75,75);
+        player.setLooping(true);
+
+        end_button.setVisibility(View.GONE);
         setTexts();
     }
 
@@ -72,8 +79,21 @@ public class GameActivity extends AppCompatActivity {
 
     protected void setTexts(){
 
+        // Separate the choices in the question textView
+        String question = map.currentNode().getQuestion();
+        if (question.contains("1:")){
+            question = question.replace("1:","\n1:");
+        }
+        if (question.contains("2:")){
+            question = question.replace("2:","\n2:");
+        }
+        if (question.contains("3:")){
+            question = question.replace("3:","\n3:");
+        }
+
+        // Set the text for the description and the question
         tvDesc.setText(map.currentNode().getDescription());
-        tvQues.setText(map.currentNode().getQuestion());
+        tvQues.setText(question);
         slideAnimation(tvDesc);
         slideAnimation(tvQues);
 
@@ -83,11 +103,13 @@ public class GameActivity extends AppCompatActivity {
         else {
             button1.setVisibility(View.VISIBLE);
             if (map.currentNode().getQuestion().equals("-")) {
+                // If no questions
                 button1.setText(getResources().getString(R.string.option_continue));
                 button2.setVisibility(View.GONE);
                 button3.setVisibility(View.GONE);
                 slideAnimation(button1);
             } else {
+                // If there are questions
                 button1.setText(getResources().getString(R.string.option_one));
                 button2.setVisibility(View.VISIBLE);
 
@@ -131,36 +153,31 @@ public class GameActivity extends AppCompatActivity {
         setTexts();
     }
 
-    public void resetActor(View view){
-        //button for restarting game
-
-        Intent game = new Intent(GameActivity.this,MainActivity.class);
-        startActivity(game);
+    public void endActor(View view){
+        if(map.currentNode().getOption1ID() == -2) {
+            // button for going to death screen
+            Intent death = new Intent(GameActivity.this,DeathActivity.class);
+            startActivity(death);
+        }
+        else{
+            // button for going to victory screen
+            Intent victory = new Intent(GameActivity.this,VictoryActivity.class);
+            startActivity(victory);
+        }
 
     }
+
 
     public void endOfGame(){
         // makes all buttons gone apart from the reset button, so the user can start the game again
 
-        textPanel.setVisibility(View.INVISIBLE);
-        buttonPanel.setVisibility(View.INVISIBLE);
-
         button1.setVisibility(View.GONE);
         button2.setVisibility(View.GONE);
         button3.setVisibility(View.GONE);
-        reset.setVisibility(View.VISIBLE);
 
-        if(map.currentNode().getOption1ID() == -2){
-            bg.setBackgroundResource(R.drawable.death);
-            tvDesc.setTextColor(Color.WHITE);
-            tvQues.setTextColor(Color.WHITE);
-            reset.setTextColor(Color.WHITE);
-        }
-        else{
-            bg.setBackgroundResource(R.drawable.alive);
-        }
+        end_button.setVisibility(View.VISIBLE);
+        slideAnimation(end_button);
 
-        slideAnimation(reset);
     }
 
     // Slide animation for buttons and text.
@@ -186,6 +203,19 @@ public class GameActivity extends AppCompatActivity {
     public void slideAnimation(TextView text){
         text.startAnimation(textAnim);
         textPanel.startAnimation(textAnim);
+    }
+
+    // Function to stop the music if the app is minimized.
+    @Override
+    protected void onPause() {
+        player.pause();
+        super.onPause();
+    }
+    // Function to play the music again if the app is reopened.
+    @Override
+    protected void onResume() {
+        player.start();
+        super.onResume();
     }
 
 }

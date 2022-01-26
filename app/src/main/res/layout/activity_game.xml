@@ -49,24 +49,23 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="376dp"
-        android:layout_height="228dp"
+        android:layout_width="379dp"
+        android:layout_height="173dp"
         android:text="@string/text_and_question"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/textpanel"
-        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/textpanel"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.168" />
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="375dp"
-        android:layout_height="80dp"
+        android:layout_width="352dp"
+        android:layout_height="142dp"
         android:maxLines="4"
         android:text="@string/text_and_question"
         android:textAlignment="center"
@@ -75,12 +74,12 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/textpanel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/textpanel"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintVertical_bias="0.922" />
 
     <Button
         android:id="@+id/button1"
@@ -103,14 +102,14 @@
         tools:ignore="UsingOnClickInXml" />
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/end"
         android:layout_width="374dp"
         android:layout_height="103dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/miriam_libre"
         android:hapticFeedbackEnabled="true"
-        android:onClick="resetActor"
-        android:text="@string/reset"
+        android:onClick="endActor"
+        android:text="@string/option_continue"
         android:textAllCaps="false"
         android:textSize="21sp"
         android:visibility="gone"

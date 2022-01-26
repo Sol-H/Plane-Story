@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         plane = findViewById(R.id.plane);
 
         // Start playing main menu music
-        player = MediaPlayer.create(MainActivity.this,R.raw.maintheme);
+        player = MediaPlayer.create(MainActivity.this,R.raw.mainthemetwo);
         player.start();
         player.setVolume(75,75);
         player.setLooping(true);
@@ -39,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
 
    public void startGameActor(View view){
-        // When start game is tapped, the music is stopped and game activity is started
+        // When start game is tapped, the game activity is started
        Intent game = new Intent(MainActivity.this,GameActivity.class);
-       player.stop();
        startActivity(game);
    }
 
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public void animateStartText(){
         // Create zoom repeat animation
         final Animation animShake = AnimationUtils.loadAnimation(this, R.anim.zoomrepeat);
-        // Start animating the image to shake
+        // Start animating the image to zoom in and out
         startView.startAnimation(animShake);
     }
 
