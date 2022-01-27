@@ -25,7 +25,7 @@ public class VictoryActivity extends AppCompatActivity {
         // Start playing victory music
         player = MediaPlayer.create(VictoryActivity.this,R.raw.victory);
         player.start();
-        player.setVolume(75,75);
+        player.setVolume(100,100);
         player.setLooping(true);
 
         animateTitle();

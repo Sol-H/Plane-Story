@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         plane = findViewById(R.id.plane);
 
         // Start playing main menu music
-        player = MediaPlayer.create(MainActivity.this,R.raw.mainthemetwo);
+        player = MediaPlayer.create(MainActivity.this,R.raw.maintheme2);
         player.start();
         player.setVolume(75,75);
         player.setLooping(true);

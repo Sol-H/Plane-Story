@@ -65,7 +65,7 @@ public class GameActivity extends AppCompatActivity {
         // Start playing game music
         player = MediaPlayer.create(GameActivity.this,R.raw.thinking);
         player.start();
-        player.setVolume(75,75);
+        player.setVolume(50,50);
         player.setLooping(true);
 
         end_button.setVisibility(View.GONE);
