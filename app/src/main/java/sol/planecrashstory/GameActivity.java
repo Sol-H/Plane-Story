@@ -72,6 +72,7 @@ public class GameActivity extends AppCompatActivity {
         setTexts();
     }
 
+    // Implementing CSV file
     protected InputStream getCSVRes(){
         Resources res = getResources();
         return res.openRawResource(R.raw.data);
@@ -108,7 +109,7 @@ public class GameActivity extends AppCompatActivity {
         }
         else {
             button1.setVisibility(View.VISIBLE);
-            if (map.currentNode().getQuestion().equals("-")) {
+            if (map.noDecision()) {
                 // If no questions
                 button1.setText(getResources().getString(R.string.option_continue));
                 button2.setVisibility(View.GONE);

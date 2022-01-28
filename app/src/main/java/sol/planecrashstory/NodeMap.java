@@ -15,9 +15,6 @@ public class NodeMap {
 /****************************************************/
     public Node currentNode() { return currentNode;}
 
-    public void noDecision(){
-        currentNode = currentNode.getNodeOne();
-    }
 
     public void decision(int decision) {
         if (twoChoices()) {
@@ -47,6 +44,10 @@ public class NodeMap {
 
     public boolean twoChoices(){
         return currentNode.getOption3ID() == -1;
+    }
+
+    public boolean noDecision(){
+        return currentNode.getQuestion().equals("-");
     }
 
     public boolean endOfGame(){
